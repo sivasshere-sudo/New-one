@@ -124,7 +124,7 @@ header>a{color:var(--ink);text-decoration:none}
 }
 .logo{height:64px;width:64px;object-fit:contain;background:#fff;border-radius:16px;padding:2px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
 @media (max-width:560px){.logo{height:56px;width:56px}
-
+}
 /* =================================
    MOBILE IMAGE & FLICKERING FIX
 ================================= */
@@ -204,4 +204,5 @@ img {
     }
 
     .gallery img {
-        height: 220px;}}
+        height: 220px;}
+}
