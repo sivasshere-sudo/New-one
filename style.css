@@ -124,3 +124,84 @@ header>a{color:var(--ink);text-decoration:none}
 }
 .logo{height:64px;width:64px;object-fit:contain;background:#fff;border-radius:16px;padding:2px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
 @media (max-width:560px){.logo{height:56px;width:56px}}
+
+/* =================================
+   MOBILE IMAGE & FLICKERING FIX
+================================= */
+
+/* Prevent horizontal scrolling */
+html {
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Make all images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevent image layout shifting */
+img {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Fix gallery images */
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Mobile layout */
+@media screen and (max-width: 768px) {
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    section {
+        max-width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    /* Prevent unwanted animations */
+    * {
+        scroll-behavior: auto;
+    }
+}
+
+/* Smaller phones */
+@media screen and (max-width: 380px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 220px;}}
